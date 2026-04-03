@@ -22,14 +22,15 @@
     .client-logo img {
       height: auto;
       max-width: 200px;
-      filter: brightness(0) invert(1);
+      filter: brightness(0) invert(1) !important;
       opacity: 0.8;
       transition: filter 0.3s ease, opacity 0.3s ease;
     }
 
     .client-logo img:hover {
-      filter: none;
-      opacity: 0.5;
+      filter: none !important; /* fuerza quitar el filtro */
+      opacity: 1; /* mejor que 0.5 para que se vea bien */
+
     }
 
     /* Animación de deslizamiento */
