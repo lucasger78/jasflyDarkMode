@@ -29,10 +29,15 @@
 
   function mobileNavToogle() {
     document.querySelector('body').classList.toggle('mobile-nav-active');
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
+    if (mobileNavToggleBtn) {
+      mobileNavToggleBtn.classList.toggle('bi-list');
+      mobileNavToggleBtn.classList.toggle('bi-x');
+    }
   }
-  mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+  
+  if (mobileNavToggleBtn) {
+    mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+  }
 
   /**
    * Hide mobile nav on same-page/hash links
@@ -231,13 +236,17 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
- const imageModal = document.getElementById('imageModal');
+const imageModal = document.getElementById('imageModal');
+if (imageModal) {
     imageModal.addEventListener('show.bs.modal', function (event) {
       const button = event.relatedTarget;
       const imageSrc = button.getAttribute('data-bs-image');
       const modalImage = imageModal.querySelector('#modalImage');
-      modalImage.src = imageSrc;
+      if (modalImage) {
+        modalImage.src = imageSrc;
+      }
     });
+}
 
 
 

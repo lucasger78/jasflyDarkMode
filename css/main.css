@@ -497,6 +497,8 @@ li {
     margin-right: 10px;
     cursor: pointer;
     transition: color 0.3s;
+    position: relative;
+    z-index: 9999;
   }
 
   .navmenu {
