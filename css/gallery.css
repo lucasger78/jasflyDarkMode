@@ -1,0 +1,188 @@
+.gallery-section {
+  font-family: "Poppins", sans-serif;
+  color: var(--default-color);
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 10% 60px 10%; /* 10% a cada lado, espacio arriba y abajo */
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+  /* Sin max-width: ocupa todo el ancho disponible dentro del padding */
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 380px; /* antes 250px — más alto para mayor presencia visual */
+  object-fit: cover;
+  display: block;
+  filter: grayscale(100%);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: rgba(20, 22, 30, 0.88);
+  color: #e8e8e8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: rgb(240, 239, 239);
+}
+
+.overlay a {
+  color: rgb(240, 239, 239);
+  padding: 8px 12px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 18px;
+  transition: background 0.3s;
+}
+
+.overlay a:hover {
+  color: #616794;
+}
+
+.title-overlay-project {
+  font-size: medium !important;
+  transition: font-size 0.3s ease;
+}
+
+.title-overlay-project:hover {
+  font-size: x-large !important;
+}
+
+.ver-mas-overlay-project {
+  font-size: medium !important;
+}
+
+/* PROJECT DETAILS GALLERY */
+
+.project-descriptions {
+  padding: 8px 12px !important;
+  font-size: 14px;
+  border: 1px solid #3a3d4a !important;
+  border-radius: 5px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  color: inherit;
+  background-color: #2a2d38;
+}
+
+.project-descriptions:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  border-color: #a6a6aa !important;
+  background-color: #32353f !important;
+  color: #ffffff;
+}
+
+.project-gallery {
+  padding: 12px !important;
+  justify-content: center !important;
+  align-items: center !important;
+  font-size: 14px;
+  border: 1px solid #3a3d4a !important;
+  border-radius: 5px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  color: inherit;
+  background-color: #2a2d38;
+}
+
+.project-gallery:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  border-color: #a6a6aa !important;
+  background-color: #32353f !important;
+  color: #ffffff;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .gallery-section {
+    padding: 20px 5% 40px 5%;
+  }
+
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery-item {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 15px !important;
+  }
+
+  .gallery-item img {
+    width: 100% !important;
+    height: 260px !important;
+    display: block !important;
+  }
+}
+
+
+
+/* Indicadores circulares del carrusel hero */
+#hero-carousel .carousel-indicators {
+  bottom: 20px;
+  margin-bottom: 0;
+  z-index: 2;
+}
+
+#hero-carousel .carousel-indicators [data-bs-target] {
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  margin: 0 5px;
+  padding: 0;
+  text-indent: -999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+
+#hero-carousel .carousel-indicators [data-bs-target].active {
+  background-color: #fff !important;
+  border-color: #fff;
+  transform: scale(1.3);
+  width: 7px !important;
+  height: 7px !important;
+}
+
+#hero-carousel .carousel-indicators [data-bs-target]:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
