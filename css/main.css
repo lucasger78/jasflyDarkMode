@@ -979,12 +979,19 @@ section,
 
 @media (max-width: 768px) {
   .section-title {
-    margin-left: 5px !important;
+    margin-left: 0 !important;   /* elimina cualquier margen */
+    text-align: left !important; /* alinea el texto a la izquierda */
+    left: 0 !important;          /* si está con position absolute */
+    right: auto !important;    
   }
 
   .logo-image {
     width: 80px;
   }
+
+  /* .breadcrumbs{
+    right: 2px !important;
+  } */
 
   .btn-getstarted {
     display: block;
@@ -994,6 +1001,13 @@ section,
     /* pequeño aire respecto a las banderas */
     text-align: center;
 
+  }
+
+  #minimenu {
+    margin-top: 5px !important;
+    margin-bottom: 10px !important;
+    margin-left: 45% !important;
+    width: 200px !important;
   }
 }
 
